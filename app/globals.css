@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ──────────────────────────────────────────────── */
+:root {
+  /* Font variables — injected by next/font/google in app/layout.tsx */
+  --font-inter: '';
+  --font-manrope: '';
+  --font-montserrat: '';
+
+  /* Brand palette */
+  --brand-dark:    #0B1120;
+  --brand-surface: #1E293B;
+  --brand-blue:    #55a4ff;
+  --brand-light:   #F8FAFC;
+  --brand-slate:   #0F172A;
+}
+
+/* ─── Base Body Styles ───────────────────────────────────────────────────── */
+body {
+  background-color: var(--brand-dark);
+  color: #F8FAFC;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ─── Keyframe Animations ────────────────────────────────────────────────── */
+
+/* Cosmic parallax starfield scroll */
+@keyframes stars-scroll {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-2000px); }
+}
+
+/* Aurora gradient shift */
+@keyframes aurora-shift {
+  from { background-position: 50% 50%; }
+  to   { background-position: 350% 50%; }
+}
+
+/* Infinite horizontal marquee */
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Cosmic Starfield Utility Classes ───────────────────────────────────── */
+
+/* Small stars — 1 px, 50 s cycle */
+.cosmic-stars {
+  width: 1px;
+  height: 1px;
+  animation: stars-scroll 50s linear infinite;
+}
+
+/* Medium stars — 2 px, 100 s cycle */
+.cosmic-stars-medium {
+  width: 2px;
+  height: 2px;
+  animation: stars-scroll 100s linear infinite;
+}
+
+/* Large stars — 3 px, 150 s cycle */
+.cosmic-stars-large {
+  width: 3px;
+  height: 3px;
+  animation: stars-scroll 150s linear infinite;
+}
+
+/* ─── Dynamic Border Card ────────────────────────────────────────────────── */
+.dynamic-border-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* Rotating conic-gradient border orbit via ::before pseudo-element */
+.dynamic-border-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #3b82f6 60deg,
+    transparent 120deg
+  );
+  animation: border-orbit 8s linear infinite;
+  filter: blur(4px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Reveal holographic overlay on hover */
+.dynamic-border-card:hover .pointer-events-none:first-child {
+  opacity: 1;
+}
+
+/* border-orbit keyframe — full rotation drives the conic-gradient sweep */
+@keyframes border-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Cyber Orb ring rotation (explicit, in case Tailwind spin is purged) ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
