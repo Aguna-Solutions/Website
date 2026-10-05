@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen bg-[#0B1120]">
+    <div className="relative min-h-screen bg-[#0B1120]">
       {/* ASCII sphere background */}
       <ArtificialHero />
       {/* Foreground content */}
@@ -22,6 +22,6 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </div>
-    </main>
+    </div>
   );
 }

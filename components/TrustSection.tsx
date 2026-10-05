@@ -166,32 +166,46 @@ export default function TrustSection() {
       </div>
 
       {/* ── 3. What Sets Us Apart — Differentiators Grid ─────────────────── */}
-      <div className="py-20 px-4 bg-white">
+      <div className="relative py-24 px-4 bg-transparent">
+        {/* Subtle ambient glow behind differentiators */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+        >
+          <div
+            className="w-[800px] h-[400px] opacity-25 blur-3xl"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(59,130,246,0.3) 0%, rgba(34,211,238,0.1) 45%, transparent 70%)",
+            }}
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/25 text-blue-300 text-xs font-semibold uppercase tracking-widest mb-4 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               Our Edge
-            </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-brand-slate tracking-tight">
+            </span>
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-white tracking-tight">
               What Sets Us Apart?
             </h2>
-            <p className="mt-4 text-gray-600 text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
               More than a vendor — a committed security partner with real-world expertise and measurable results.
             </p>
           </div>
 
-          {/* Centered flex layout — 3 per row, last row centered */}
-          <div className="flex flex-wrap justify-center gap-6">
+          {/* Centered responsive layout: 3 cards top row, 2 cards centered bottom */}
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
             {differentiators.map((statement, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-6 rounded-2xl bg-slate-900 border border-slate-700 hover:border-blue-500/40 transition-colors duration-300 w-full md:w-[calc(33.333%-1rem)]"
+                className="group flex items-start gap-4 p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-800/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
-                <CheckCircle
-                  className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5"
-                  aria-hidden="true"
-                />
-                <p className="text-gray-200 font-medium leading-relaxed text-sm">
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0 mt-0.5 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                  <CheckCircle className="w-5 h-5" aria-hidden="true" />
+                </div>
+                <p className="text-slate-200 font-medium leading-relaxed text-sm pt-1">
                   {statement}
                 </p>
               </div>

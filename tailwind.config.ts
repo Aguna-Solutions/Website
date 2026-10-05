@@ -24,11 +24,16 @@ const config: Config = {
         grotesk: ["var(--font-grotesk)", "system-ui", "sans-serif"],
         jetbrains: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
         fraunces: ["var(--font-fraunces)", "Georgia", "serif"],
+        jakarta: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        outfit: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        sora: ["var(--font-sora)", "system-ui", "sans-serif"],
+        unbounded: ["var(--font-unbounded)", "system-ui", "sans-serif"],
+        exo2: ["var(--font-exo2)", "system-ui", "sans-serif"],
+        comfortaa: ["var(--font-comfortaa)", "system-ui", "sans-serif"],
       },
       animation: {
         aurora: "aurora-shift 60s linear infinite",
         marquee: "marquee-slide var(--duration, 30s) linear infinite",
-        "border-orbit": "border-orbit 8s linear infinite",
         "stars-1": "stars-scroll 50s linear infinite",
         "stars-2": "stars-scroll 100s linear infinite",
         "stars-3": "stars-scroll 150s linear infinite",
@@ -41,19 +46,6 @@ const config: Config = {
         "marquee-slide": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
-        },
-        "border-orbit": {
-          "0%": {
-            offsetDistance: "0%",
-            opacity: "1",
-          },
-          "50%": {
-            opacity: "0.6",
-          },
-          "100%": {
-            offsetDistance: "100%",
-            opacity: "1",
-          },
         },
         "stars-scroll": {
           from: { transform: "translateY(0px)" },

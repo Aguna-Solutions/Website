@@ -254,24 +254,39 @@ export default function ServiceOfferings() {
       <section
         id="vapt-assessment-types"
         aria-labelledby="vapt-heading"
-        className="bg-white"
+        className="relative bg-[#070E1E] py-20 overflow-hidden border-t border-white/5"
       >
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Subtle ambient glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+        >
+          <div
+            className="w-[700px] h-[350px] opacity-20 blur-3xl"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(59,130,246,0.3) 0%, rgba(34,211,238,0.1) 50%, transparent 70%)",
+            }}
+          />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Left column — title + intro */}
             <div className="flex flex-col justify-center gap-6">
               <div>
-                <span className="mb-3 inline-block rounded-full bg-brand-blue/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-blue">
+                <span className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-400/25 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-blue-300 backdrop-blur-sm mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                   VAPT
                 </span>
                 <h2
                   id="vapt-heading"
-                  className="text-3xl font-bold text-brand-slate md:text-4xl"
+                  className="font-montserrat text-3xl md:text-4xl font-bold text-white tracking-tight"
                 >
                   Assessment Types
                 </h2>
               </div>
-              <p className="text-base leading-relaxed text-gray-600">
+              <p className="text-base leading-relaxed text-slate-300">
                 Our VAPT engagements span the full attack surface — from
                 external-facing web applications to internal network
                 infrastructure — giving you a comprehensive picture of your
@@ -290,12 +305,12 @@ export default function ServiceOfferings() {
                 {VAPT_TYPES.map(({ label, icon: TypeIcon }) => (
                   <div
                     key={label}
-                    className="flex items-start gap-3 rounded-xl border border-gray-100 bg-black p-5 shadow-sm"
+                    className="group flex items-start gap-3.5 rounded-xl border border-slate-800 bg-slate-900/60 p-5 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/40 hover:bg-slate-800/80 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)]"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue">
-                      <TypeIcon size={18} />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 transition-colors duration-300 group-hover:bg-cyan-500/20 group-hover:text-cyan-300">
+                      <TypeIcon size={19} />
                     </div>
-                    <p className="text-sm font-medium leading-snug text-white">
+                    <p className="text-sm font-medium leading-snug text-slate-200 group-hover:text-white transition-colors pt-1">
                       {label}
                     </p>
                   </div>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -43,6 +43,6 @@ export default function ServicesPage() {
       <WhyAguna />
       <SectionDivider />
       <Industries />
-    </main>
+    </>
   );
 }

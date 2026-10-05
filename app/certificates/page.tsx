@@ -18,7 +18,7 @@ export default function CertificatesPage() {
   }));
 
   return (
-    <main>
+    <>
       <AuroraBackground className="min-h-screen bg-black py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -41,6 +41,6 @@ export default function CertificatesPage() {
           </div>
         </div>
       </AuroraBackground>
-    </main>
+    </>
   );
 }

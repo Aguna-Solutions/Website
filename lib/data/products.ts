@@ -10,6 +10,8 @@ export interface Product {
   tags: string[];
   techSpecs: string[]; // 2 hover-reveal badges
   icon: LucideIcon;
+  externalUrl?: string;
+  externalLabel?: string;
 }
 
 export const products: Product[] = [
@@ -27,6 +29,8 @@ export const products: Product[] = [
     tags: ["Industrial AI", "Predictive Maintenance"],
     techSpecs: ["Nanometer Precision", "Edge AI Processing"],
     icon: Factory,
+    externalUrl: "https://www.athermind.com/products#industry-analytics",
+    externalLabel: "Explore on AtherMind",
   },
   {
     name: "CCTV Anomaly Detection",
@@ -42,6 +46,8 @@ export const products: Product[] = [
     tags: ["Computer Vision", "Security AI"],
     techSpecs: ["YOLO v8 Inference", "Edge Computing"],
     icon: Camera,
+    externalUrl: "https://www.athermind.com/products#cctv-anomaly",
+    externalLabel: "Explore on AtherMind",
   },
   {
     name: "Database Activity Monitor",
@@ -57,6 +63,8 @@ export const products: Product[] = [
     tags: ["Data Security", "Compliance"],
     techSpecs: ["AES-256 Encryption", "Real-time Alerts"],
     icon: Database,
+    externalUrl: "https://www.athermind.com/products#database-monitor",
+    externalLabel: "Explore on AtherMind",
   },
   {
     name: "Athermind Integrity Platform",
@@ -72,6 +80,8 @@ export const products: Product[] = [
     tags: ["Data Integrity", "Audit"],
     techSpecs: ["Blockchain Anchoring", "Immutable Logging"],
     icon: Lock,
+    externalUrl: "https://www.athermind.com/products#integrity-platform",
+    externalLabel: "Explore on AtherMind",
   },
   {
     name: "Document and Workflow Governance Platform",
@@ -87,5 +97,7 @@ export const products: Product[] = [
     tags: ["Document AI", "Enterprise"],
     techSpecs: ["NLP Classification", "Zero-trust Access"],
     icon: FileText,
+    externalUrl: "https://www.athermind.com/products#document-governance",
+    externalLabel: "Explore on AtherMind",
   },
 ];

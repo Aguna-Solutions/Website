@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 
 export default function CyberSecurityPage() {
   return (
-    <main>
+    <>
       <CyberPillars />
       <SectionDivider />
       <CyberCapabilities />
       <SectionDivider />
       <CyberOperations />
-      <div className="w-full bg-gray-100 flex justify-center">
-        <div className="h-px w-1/2 max-w-3xl bg-slate-400/30 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rounded-full" />
+      <div className="w-full bg-[#070E1E] flex justify-center">
+        <div className="h-px w-1/2 max-w-3xl bg-slate-700/40 shadow-[0_1px_2px_rgba(0,0,0,0.3)] rounded-full" />
       </div>
       <WhyCyber />
       <div className="w-full bg-[#0B1120] flex justify-center">
@@ -34,6 +34,6 @@ export default function CyberSecurityPage() {
         <div className="h-px w-1/2 max-w-3xl bg-slate-700/50 shadow-[0_1px_2px_rgba(0,0,0,0.3)] rounded-full" />
       </div>
       <AdvancedCapabilities />
-    </main>
+    </>
   );
 }

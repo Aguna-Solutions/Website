@@ -111,56 +111,71 @@ export default function CyberOperations() {
   return (
     <section
       id="advances-operations"
-      className="bg-blue-50 py-20 px-4 sm:px-6 lg:px-8"
+      className="relative bg-[#070E1E] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-white/5"
     >
+      {/* Ambient background glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+      >
+        <div
+          className="w-[800px] h-[400px] opacity-20 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(59,130,246,0.25) 0%, rgba(34,211,238,0.1) 50%, transparent 70%)",
+          }}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-xs font-extrabold uppercase tracking-widest text-blue-600 mb-3 font-manrope">
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-400/25 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-blue-300 backdrop-blur-sm mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
             Operational Excellence
-          </p>
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          </span>
+          <h2 className="font-montserrat text-3xl md:text-4xl font-bold tracking-tight text-white">
             Advanced Security Operations
           </h2>
-          <p className="mt-4 text-base text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-base text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
             Six integrated operational pillars delivering end-to-end security
             coverage — from detection to governance.
           </p>
         </div>
 
-        {/* 3-column grid of DynamicBorderCard items */}
+        {/* 3-column grid of cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {operations.map((op) => {
             const Icon = op.icon;
             return (
               <DynamicBorderCard
                 key={op.id}
-                className="bg-white/80 border-slate-200 hover:border-blue-300 transition-colors duration-200"
+                className="bg-slate-900/60 border-slate-800 hover:border-cyan-500/40 hover:bg-slate-800/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] h-full"
               >
                 <div className="p-6 flex flex-col h-full">
                   {/* Icon */}
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 border border-blue-100">
+                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 group-hover:bg-cyan-500/20 group-hover:text-cyan-300 transition-colors">
                     <Icon
-                      className="w-6 h-6 text-blue-600"
+                      className="w-6 h-6"
                       aria-hidden="true"
                     />
                   </div>
                   {/* Title */}
-                  <h3 className="font-montserrat text-base font-bold tracking-tight text-slate-900 mb-2">
+                  <h3 className="font-montserrat text-base font-bold tracking-tight text-white mb-2">
                     {op.title}
                   </h3>
                   {/* Summary */}
-                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
+                  <p className="text-sm text-slate-300 leading-relaxed flex-1">
                     {op.summary}
                   </p>
                   {/* Learn More */}
                   <button
                     onClick={() => setActiveCard(op.id)}
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-150"
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors duration-150 group/btn"
                     aria-label={`Learn more about ${op.title}`}
                   >
-                    Learn More
-                    <span className="ml-1" aria-hidden="true">→</span>
+                    <span>Learn More</span>
+                    <span className="ml-1 transition-transform group-hover/btn:translate-x-1" aria-hidden="true">→</span>
                   </button>
                 </div>
               </DynamicBorderCard>

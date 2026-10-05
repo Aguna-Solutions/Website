@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -69,6 +69,6 @@ export default function Home() {
       <SectionDivider />
       <TrustSection />
       <CertificatesGrid />
-    </main>
+    </>
   );
 }

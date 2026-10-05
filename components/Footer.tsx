@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Mail } from "lucide-react";
 
 const quickLinks = [
@@ -12,7 +13,6 @@ const quickLinks = [
 ];
 
 const trustLinks = [
-
   { label: "Certificates", href: "/#certificates" },
   { label: "Operating Principles", href: "/about#operating-principles" },
   { label: "Partners", href: "/about#partners" },
@@ -30,33 +30,45 @@ const techLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white/80 backdrop-blur-md border-t border-gray-200">
+    <footer className="bg-[#070E1E]/90 backdrop-blur-xl border-t border-cyan-500/20 text-slate-300">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Four-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Column 1: Corporate contact (span 3) */}
           <div className="md:col-span-3 flex flex-col gap-4">
-            <h3 className="text-black font-bold text-lg">Aguna Solutions</h3>
+            {/* Logo and Brand Title */}
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <Image
+                src="/aguna-logo.png"
+                alt="Aguna Solutions Logo"
+                width={48}
+                height={52}
+                className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(85,164,255,0.4)]"
+              />
+              <span className="font-montserrat font-bold text-lg text-white group-hover:text-blue-300 transition-colors">
+                Aguna Solutions
+              </span>
+            </Link>
 
             {/* Address */}
-            <div className="flex items-start gap-2 text-zinc-700 text-sm">
-              <MapPin className="text-emerald-600 mt-0.5 shrink-0" size={16} />
+            <div className="flex items-start gap-2 text-slate-300 text-sm">
+              <MapPin className="text-cyan-400 mt-0.5 shrink-0" size={16} />
               <span>7th floor, Eco Tower, Sector 125, Noida.</span>
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-2 text-zinc-700 text-sm">
-              <Mail className="text-emerald-600 shrink-0" size={16} />
+            <div className="flex items-center gap-2 text-slate-300 text-sm">
+              <Mail className="text-cyan-400 shrink-0" size={16} />
               <a
                 href="mailto:info@agunasolutions.com"
-                className="hover:text-emerald-600 transition-colors"
+                className="hover:text-cyan-300 transition-colors"
               >
                 info@agunasolutions.com
               </a>
             </div>
 
             {/* LinkedIn */}
-            <div>
+            <div className="pt-1">
               <a
                 href="https://www.linkedin.com/company/aguna-solutions/posts/?feedView=all"
                 target="_blank"
@@ -81,7 +93,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links (span 3) */}
           <div className="md:col-span-3">
-            <h4 className="text-black font-bold text-sm uppercase tracking-wider mb-4">
+            <h4 className="text-white font-montserrat font-bold text-sm uppercase tracking-wider mb-4">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-2">
@@ -89,7 +101,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-zinc-900 text-sm hover:text-emerald-600 transition-colors"
+                    className="text-slate-400 text-sm hover:text-cyan-300 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -100,7 +112,7 @@ export default function Footer() {
 
           {/* Column 3: Trust & Compliance (span 3) */}
           <div className="md:col-span-3">
-            <h4 className="text-black font-bold text-sm uppercase tracking-wider mb-4">
+            <h4 className="text-white font-montserrat font-bold text-sm uppercase tracking-wider mb-4">
               Trust &amp; Compliance
             </h4>
             <ul className="flex flex-col gap-2">
@@ -108,7 +120,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-zinc-900 text-sm hover:text-emerald-600 transition-colors"
+                    className="text-slate-400 text-sm hover:text-cyan-300 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -119,7 +131,7 @@ export default function Footer() {
 
           {/* Column 4: Tech & Operations (span 3) */}
           <div className="md:col-span-3">
-            <h4 className="text-black font-bold text-sm uppercase tracking-wider mb-4">
+            <h4 className="text-white font-montserrat font-bold text-sm uppercase tracking-wider mb-4">
               Tech &amp; Operations
             </h4>
             <ul className="flex flex-col gap-2">
@@ -127,7 +139,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-zinc-900 text-sm hover:text-emerald-600 transition-colors"
+                    className="text-slate-400 text-sm hover:text-cyan-300 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -138,7 +150,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-10 pt-6 border-t border-gray-200 text-center text-zinc-500 text-sm">
+        <div className="mt-10 pt-6 border-t border-white/10 text-center text-slate-400 text-sm">
           &copy; {new Date().getFullYear()} Aguna Solutions. All rights reserved.
         </div>
       </div>

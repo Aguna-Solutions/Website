@@ -14,13 +14,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       <AboutMission />
       <SectionDivider />
       <HowWeWork />
       <SectionDivider />
       <AboutValues />
       <TechPartners />
-    </main>
+    </>
   );
 }
+
